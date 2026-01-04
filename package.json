@@ -42,7 +42,7 @@
 		"@vitest/browser-playwright": "^4.0.16",
 		"@vitest/coverage-v8": "^4.0.16",
 		"drizzle-kit": "^0.31.8",
-		"drizzle-orm": "^0.45.0",
+		"drizzle-orm": "^0.45.1",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-storybook": "^10.1.11",
@@ -64,6 +64,7 @@
 	"dependencies": {
 		"better-sqlite3": "^12.5.0",
 		"dotenv": "^17.2.3",
-		"oslo": "^1.2.1"
+		"oslo": "^1.2.1",
+		"uuid": "^13.0.0"
 	}
 }
