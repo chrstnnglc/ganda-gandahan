@@ -17,10 +17,7 @@
 		"db:migrate": "drizzle-kit migrate",
 		"db:studio": "drizzle-kit studio",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build",
-		"generate-migrations:db": "npx drizzle-kit generate",
-		"push:db": "npx drizzle-kit push",
-		"migrate:db": "npx drizzle-kit migrate"
+		"build-storybook": "storybook build"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^4.1.3",
