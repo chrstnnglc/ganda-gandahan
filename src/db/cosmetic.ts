@@ -1,4 +1,15 @@
-import { int, numeric, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { int, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+
+type Cosmetic = {
+	id: number;
+	brand: string;
+	name: string;
+	category: string;
+	price: number;
+	tone: string;
+	shade: string;
+	notes: string;
+}
 
 const cosmeticsTable = sqliteTable('cosmetics', {
 	id: int().primaryKey({ autoIncrement: true }),
@@ -13,4 +24,4 @@ const cosmeticsTable = sqliteTable('cosmetics', {
 
 type InsertCosmeParams = typeof cosmeticsTable.$inferInsert;
 
-export { cosmeticsTable, type InsertCosmeParams };
+export { cosmeticsTable, type InsertCosmeParams, type Cosmetic };
