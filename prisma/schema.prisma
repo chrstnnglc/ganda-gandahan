@@ -1,0 +1,113 @@
+// Prisma schema for skincare inventory + wishlist
+// Phase 1: SQLite (local). Phase 2: swap provider to "turso" when migrating to cloud.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// -------------------------------------------------------
+// Brand
+// User-defined. e.g. Cetaphil, The Ordinary, Innisfree.
+// -------------------------------------------------------
+model Brand {
+  id       String    @id @default(cuid())
+  name     String    @unique
+
+  products Product[]
+  wishlist WishlistItem[]
+}
+
+// -------------------------------------------------------
+// ProductType
+// User-defined. e.g. Moisturiser, Serum, Sunscreen, Toner.
+// -------------------------------------------------------
+model ProductType {
+  id       String    @id @default(cuid())
+  name     String    @unique
+
+  products Product[]
+  wishlist WishlistItem[]
+}
+
+// -------------------------------------------------------
+// Product
+// Core inventory table. Each row is a product you own.
+// repurchaseStatus tracks whether you want to buy it again.
+// expiryDate is optional — not all products have one.
+// -------------------------------------------------------
+model Product {
+  id                String            @id @default(cuid())
+  name              String
+  brandId           String
+  typeId            String
+  expiryDate        DateTime?
+  repurchaseStatus  RepurchaseStatus  @default(MAYBE)
+  notes             String?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+
+  brand             Brand             @relation(fields: [brandId], references: [id])
+  type              ProductType       @relation(fields: [typeId], references: [id])
+
+  // Optional: if this product was converted from a wishlist item,
+  // track which wishlist item it came from.
+  wishlistItemId    String?           @unique
+  wishlistItem      WishlistItem?     @relation(fields: [wishlistItemId], references: [id])
+
+  @@index([brandId])
+  @@index([typeId])
+  @@index([repurchaseStatus])
+  @@index([expiryDate])
+}
+
+enum RepurchaseStatus {
+  BUY_AGAIN
+  STOP
+  MAYBE
+}
+
+// -------------------------------------------------------
+// WishlistItem
+// Products you want to try but don't own yet.
+// priority helps you decide what to buy next.
+// When purchased, create a Product row and link it back
+// via Product.wishlistItemId, then mark this as PURCHASED.
+// -------------------------------------------------------
+model WishlistItem {
+  id        String          @id @default(cuid())
+  name      String
+  brandId   String?
+  typeId    String?
+  priority  Priority        @default(MEDIUM)
+  notes     String?
+  status    WishlistStatus  @default(WANTED)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  brand     Brand?          @relation(fields: [brandId], references: [id])
+  type      ProductType?    @relation(fields: [typeId], references: [id])
+
+  // Set when this wishlist item is converted to a Product
+  product   Product?
+
+  @@index([brandId])
+  @@index([typeId])
+  @@index([priority])
+  @@index([status])
+}
+
+enum Priority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum WishlistStatus {
+  WANTED      // still on the wishlist
+  PURCHASED   // bought — a Product row now exists for this
+  SKIPPED     // decided not to buy after all
+}
