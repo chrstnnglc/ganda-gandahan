@@ -1,12 +1,12 @@
 <script>
-	// TODO: Add Storybook components
+	import Page from "../stories/Page.svelte";
+
 	let { data } = $props(); 
+
+	const title = "All Products";
 </script>
 
-<!-- <Page></Page> -->
-<h1>All Products</h1>
-{#each data.product as product}
-<ul>
-  <li>{product.brand.name} {product.name}</li>
-</ul>
-{/each}
+<!-- <Card cosmetic={}></Card>
+<Button label="Add Cosmetic" primary={true}></Button> -->
+<Page title={title} products={data.products}>
+</Page>
