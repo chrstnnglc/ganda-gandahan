@@ -2,7 +2,9 @@
 // Phase 1: SQLite (local). Phase 2: swap provider to "turso" when migrating to cloud.
 
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client-js" 
+  engineType = "library" 
+  output   = "./generated/prisma"
 }
 
 datasource db {
