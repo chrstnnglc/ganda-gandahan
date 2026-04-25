@@ -1,0 +1,91 @@
+.form-wrapper {
+	margin: 0 auto;
+	padding: 48px 20px;
+	max-width: 600px;
+	color: #333;
+	font-size: 14px;
+	line-height: 24px;
+	font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+label {
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 20px;
+	color: #333;
+}
+
+.optional {
+	font-weight: 400;
+	color: #999;
+	font-size: 12px;
+}
+
+input,
+select,
+textarea {
+	width: 100%;
+	padding: 8px 12px;
+	font-size: 14px;
+	font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #333;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-radius: 4px;
+	line-height: 24px;
+	box-sizing: border-box;
+	transition: border-color 0.15s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+	border-color: #1ea7fd;
+	box-shadow: 0 0 0 2px rgba(30, 167, 253, 0.15);
+}
+
+input::placeholder,
+textarea::placeholder {
+	color: #bbb;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+button[type='submit'] {
+	align-self: flex-start;
+	padding: 10px 24px;
+	font-size: 14px;
+	font-weight: 700;
+	font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #fff;
+	background: #1ea7fd;
+	border: none;
+	border-radius: 1em;
+	cursor: pointer;
+	line-height: 1;
+	transition: background 0.15s;
+}
+
+button[type='submit']:hover {
+	background: #0d8de0;
+}
+
+button[type='submit']:active {
+	background: #0a72b8;
+}
