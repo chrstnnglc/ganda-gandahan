@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import Button from '../Button/Button.svelte';
 	import './header.css';
 
 	interface Props {
@@ -9,12 +11,16 @@
 	}
 
 	const {}: Props = $props();
+
+	const onClick = () => {
+		goto('/');
+	};
 </script>
 
 <header>
 	<div class="storybook-header">
 		<div>
-			<h1>:D</h1>
+			<a href="/"><h1>:D</h1></a>
 		</div>
 		<!-- <div>
       {#if user}

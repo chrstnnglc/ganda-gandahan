@@ -4,10 +4,10 @@
 
 	let { data } = $props();
 
-	const title = 'All Products';
+	const title = 'My Skincare';
 </script>
 
-<!-- <Page {title} products={data.products}></Page> -->
+<!-- TODO: Convert to a table -->
 <div>
 	<div class="heading">
 		<h2>{title}</h2>

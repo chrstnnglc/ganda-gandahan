@@ -1,9 +1,22 @@
 <script lang="ts">
-	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import { page } from '$app/stores';
+	import type { Snippet } from 'svelte';
+	import Page from '$lib/components/Page/Page.svelte';
 
-	let { children } = $props();
+	interface Props {
+		children: Snippet;
+	}
+
+	let { children }: Props = $props();
+
+	const titles: Record<string, string> = {
+		'/': 'My Skincare',
+		'/products/new': 'Add a product'
+	};
+
+	const title = $derived(titles[$page.url.pathname] ?? 'My Skincare');
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
-{@render children()}
+<Page {title}>
+	{@render children()}
+</Page>
