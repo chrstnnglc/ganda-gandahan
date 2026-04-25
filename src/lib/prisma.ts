@@ -1,8 +1,9 @@
-import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3";
+import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
 import { PrismaClient } from '@prisma-app/client';
+// generate with npx prisma generate
 
 const adapter = new PrismaBetterSqlite3({
-  url: "file:./dev.db",
+	url: 'file:./dev.db'
 });
 
 export const prisma = new PrismaClient({ adapter });

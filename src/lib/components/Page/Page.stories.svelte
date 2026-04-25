@@ -30,16 +30,12 @@
 	}}
 />
 
-<!-- <Story name="Logged In" play={async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const loginButton = canvas.getByRole('button', { name: /Log in/i });
-    await expect(loginButton).toBeInTheDocument();
-    await userEvent.click(loginButton);
-    await waitFor(() => expect(loginButton).not.toBeInTheDocument());
+<Story
+	name="Add Product"
+	play={async ({ canvasElement }) => {
+		const canvas = within(canvasElement);
+		const addProductForm = canvasElement.querySelector('.form-add-product');
 
-    const logoutButton = canvas.getByRole('button', { name: /Log out/i });
-    await expect(logoutButton).toBeInTheDocument();
-  }}
+		await expect(addProductForm).toBeInTheDocument();
+	}}
 />
-
-<Story name="Logged Out" /> -->

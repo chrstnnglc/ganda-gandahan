@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ProductForm from '../../stories/ProductForm.svelte';
+	import ProductForm from '$lib/components/ProductForm/ProductForm.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
