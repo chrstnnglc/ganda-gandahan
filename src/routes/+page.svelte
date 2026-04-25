@@ -1,12 +1,9 @@
 <script>
-	import Page from "../stories/Page.svelte";
+	import Page from '../stories/Page.svelte';
 
-	let { data } = $props(); 
+	let { data } = $props();
 
-	const title = "All Products";
+	const title = 'All Products';
 </script>
 
-<!-- <Card cosmetic={}></Card>
-<Button label="Add Cosmetic" primary={true}></Button> -->
-<Page title={title} products={data.products}>
-</Page>
+<Page {title} products={data.products}></Page>

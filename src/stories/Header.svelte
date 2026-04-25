@@ -1,22 +1,22 @@
 <script lang="ts">
-  import './header.css';
+	import './header.css';
 
-  interface Props {
-    user?: { name: string };
-    onLogin?: () => void;
-    onLogout?: () => void;
-    onCreateAccount?: () => void;
-  }
+	interface Props {
+		user?: { name: string };
+		onLogin?: () => void;
+		onLogout?: () => void;
+		onCreateAccount?: () => void;
+	}
 
-  const {}: Props = $props();
+	const {}: Props = $props();
 </script>
 
 <header>
-  <div class="storybook-header">
-    <div>
-      <h1>:D</h1>
-    </div>
-    <!-- <div>
+	<div class="storybook-header">
+		<div>
+			<h1>:D</h1>
+		</div>
+		<!-- <div>
       {#if user}
         <span class="welcome">
           Welcome, <b>{user.name}</b>!
@@ -27,5 +27,5 @@
         <Button primary size="small" onclick={onCreateAccount} label="Sign up" />
       {/if}
     </div> -->
-  </div>
+	</div>
 </header>
