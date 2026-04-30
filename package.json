@@ -18,7 +18,7 @@
 		"db:studio": "drizzle-kit studio",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"postinstall": "prisma generate"
+		"postinstall": "npx prisma generate"
 	},
 	"prisma": {
 		"seed": "ts-node prisma/seed.ts"
