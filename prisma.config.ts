@@ -6,8 +6,8 @@ export default defineConfig({
 	migrations: {
 		path: 'prisma/migrations',
 		seed: 'tsx prisma/seed.ts'
+	},
+	datasource: {
+		url: env('TURSO_DATABASE_URL') ?? env('LOCAL_DATABASE_URL')
 	}
-	// datasource: {
-	// 	url: env('LOCAL_DATABASE_URL')
-	// }
 });
