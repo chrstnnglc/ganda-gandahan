@@ -3,6 +3,7 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import type { ProductWithBrand } from '../../../routes/+page.server';
 	import { goto } from '$app/navigation';
+	import ExpiryPill from '../ExpiryPill/ExpiryPill.svelte';
 
 	interface Props {
 		products: ProductWithBrand[] | null;
@@ -24,6 +25,7 @@
 								>{product.brand.name} {product.name}</a
 							></td
 						>
+						<td><ExpiryPill expiryDate={product.expiryDate} /></td>
 					</tr>
 				{/each}
 			</tbody>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import ExpiryPill from '$lib/components/ExpiryPill/ExpiryPill.svelte';
 	import type { PageData } from './$types';
 	import './+page.css';
 
@@ -27,7 +28,10 @@
 	<div class="product-header">
 		<div>
 			<h1>{product.brand.name} {product.name}</h1>
-			<p class="product-type">{product.type.name}</p>
+			<p class="product-type">
+				{product.type.name}
+				<ExpiryPill expiryDate={product.expiryDate} />
+			</p>
 		</div>
 		<a href="/products/{product.id}/edit" class="edit-link">Edit</a>
 	</div>
