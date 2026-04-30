@@ -1,9 +1,8 @@
 <script lang="ts">
 	import './producttable.css';
 	import Button from '$lib/components/Button/Button.svelte';
-	import type { Product, Brand } from '@prisma/client';
-
-	type ProductWithBrand = Product & { brand: Brand };
+	import type { ProductWithBrand } from '../../../routes/+page.server';
+	import { goto } from '$app/navigation';
 
 	interface Props {
 		products: ProductWithBrand[] | null;
@@ -19,10 +18,12 @@
 		<table class="table-products">
 			<tbody>
 				{#each products as product}
-					<tr>
-						<td>{product.brand.name} {product.name}</td>
-						<td><Button label="Edit" /></td>
-						<td><Button label="Delete" backgroundColor="red" /></td>
+					<tr onclick={() => goto(`/products/${product.id}`)} class="product-row">
+						<td
+							><a href="/products/{product.id}" class="product-link"
+								>{product.brand.name} {product.name}</a
+							></td
+						>
 					</tr>
 				{/each}
 			</tbody>

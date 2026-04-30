@@ -11,7 +11,9 @@
 
 	const titles: Record<string, string> = {
 		'/': 'My Skincare',
-		'/products/new': 'Add a product'
+		'/products/new': 'Add a product',
+		'/products/[id]': 'View product',
+		'/products/[id]/edit': 'Edit product'
 	};
 
 	const title = $derived(titles[$page.url.pathname] ?? 'My Skincare');
