@@ -1,9 +1,10 @@
-import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
 import { PrismaClient } from '@prisma-app/client';
+import { PrismaLibSql } from '@prisma/adapter-libsql';
 // generate with npx prisma generate then re-run npm run dev to apply changes to the database adapter
 
-const adapter = new PrismaBetterSqlite3({
-	url: 'file:./dev.db'
+const adapter = new PrismaLibSql({
+	url: `${process.env.TURSO_DATABASE_URL}`,
+	authToken: `${process.env.TURSO_AUTH_TOKEN}`
 });
 
 export const prisma = new PrismaClient({ adapter });

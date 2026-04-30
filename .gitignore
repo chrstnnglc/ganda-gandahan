@@ -30,3 +30,6 @@ storybook-static
 
 /../generated/prisma
 prisma/generated
+
+prisma/dev.db
+prisma/dev.db-journal
