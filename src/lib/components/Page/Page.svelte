@@ -1,7 +1,6 @@
 <script lang="ts">
 	import './page.css';
 	import Header from '../Header/Header.svelte';
-	import type { Products } from '../../../routes/+page.server';
 	import type { Snippet } from 'svelte';
 
 	let user = $state<{ name: string }>();
