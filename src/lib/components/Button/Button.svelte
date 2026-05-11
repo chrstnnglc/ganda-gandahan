@@ -19,7 +19,7 @@
 
 	const primaryStyle = 'bg-primary border-primary';
 	const secondaryStyle = 'bg-gandang-white border-primary';
-	const warningStyle = 'bg-warning border-warning text-white';
+	const warningStyle = 'bg-gandang-white border-warning text-warning';
 
 	let style = $derived(
 		variant === 'primary'
