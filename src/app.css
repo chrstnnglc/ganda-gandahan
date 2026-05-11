@@ -1,5 +1,5 @@
-@import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import 'tailwindcss';
 
 @theme {
 	--font-display: 'Fredoka', 'Nunito Sans', Helvetica, Arial, sans-serif;

@@ -17,10 +17,10 @@
 </script>
 
 <header>
-	<div class="bg-secondary flex items-center justify-between border-transparent p-7">
+	<div class="flex items-center justify-between border-transparent bg-secondary p-7 font-display">
 		<div>
 			<a href="/"
-				><h1 class="align-center mx-3 inline-block text-2xl leading-none font-bold">
+				><h1 class="align-center mx-3 inline-block text-2xl leading-none font-semibold">
 					ganda-gandahan cosmetics and skincare list
 				</h1></a
 			>

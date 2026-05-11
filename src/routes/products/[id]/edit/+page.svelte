@@ -15,7 +15,7 @@
 
 <div class="mt-7 mb-36">
 	<div class="flex flex-col items-center justify-center">
-		<h1 class="mx-0 my-2 text-2xl font-bold">Edit product</h1>
+		<h1 class="mx-0 my-2 text-2xl font-semibold">Edit product</h1>
 		<a href="/products/{product.id}" class="text-[#333333] hover:text-primary hover:underline"
 			>Cancel</a
 		>

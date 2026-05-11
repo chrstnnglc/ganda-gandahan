@@ -32,7 +32,7 @@
 <div class="mx-36 mt-7 flex flex-col items-center justify-center">
 	<div class="mb-12 flex w-full items-center justify-between">
 		<div class="text-md mx-0 my-auto w-1/2">
-			<h1 class="mx-0 my-2 text-lg font-bold">{product.brand.name} {product.name}</h1>
+			<h1 class="mx-0 my-2 text-lg font-semibold">{product.brand.name} {product.name}</h1>
 			<p class="text-sm text-[#999999]">
 				{product.type.name}
 				<ExpiryPill expiryDate={product.expiryDate} />
@@ -48,7 +48,7 @@
 	</div>
 
 	<div class="mb-8 flex items-center justify-center">
-		<table class="border-accent w-2xl border-t-1">
+		<table class="w-2xl border-t-1 border-accent">
 			<tbody>
 				<tr class={trClass}>
 					<td class={tdFieldClass}>Brand</td>
@@ -87,5 +87,5 @@
 		</table>
 	</div>
 
-	<a href="/" class="hover:text-primary text-[#333333] hover:underline">← Back to inventory</a>
+	<a href="/" class="text-[#333333] hover:text-primary hover:underline">← Back to inventory</a>
 </div>
