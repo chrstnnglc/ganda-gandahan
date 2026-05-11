@@ -15,7 +15,7 @@
 <article>
 	<Header {user} />
 
-	<section class="w-max-full text-md mx-0 my-auto px-[48px] py-[20px] text-[#333333]">
+	<section class="w-max-full text-[#333333]">
 		{@render children()}
 	</section>
 </article>

@@ -22,8 +22,8 @@
 </script>
 
 <!-- More on writing stories with args: https://storybook.js.org/docs/writing-stories/args -->
-<Story name="Primary" args={{ primary: true, label: 'Button' }} />
+<Story name="Primary" args={{ label: 'Button', variant: 'primary' }} />
 
-<Story name="Secondary" args={{ label: 'Button', backgroundColor: 'secondary' }} />
+<Story name="Secondary" args={{ label: 'Button', variant: 'secondary' }} />
 
-<Story name="Warning" args={{ label: 'Button', backgroundColor: 'warning' }} />
+<Story name="Warning" args={{ label: 'Button', variant: 'warning' }} />

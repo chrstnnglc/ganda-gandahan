@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Brand, ProductType } from '@prisma/client';
 	import type { RepurchaseStatus } from '@prisma/client';
+	import Button from '../Button/Button.svelte';
 
 	export let brands: Brand[] = [];
 	export let productTypes: ProductType[] = [];
@@ -14,16 +15,18 @@
 	} = {};
 	export let submitLabel = 'Add product';
 	export let actionPath = '?/create';
+
+	const formGroupClass = 'form-group flex flex-col';
 </script>
 
-<div class="form-add-product">
-	<form method="POST" action={actionPath}>
-		<div>
+<div class="w-max-[1000px]">
+	<form method="POST" action={actionPath} class="flex flex-col gap-5">
+		<div class={formGroupClass}>
 			<label for="name">Product name</label>
 			<input id="name" name="name" type="text" value={initialData.name ?? ''} required />
 		</div>
 
-		<div class="form-group">
+		<div class={formGroupClass}>
 			<label for="brandName">Brand</label>
 			<input
 				id="brandName"
@@ -42,7 +45,7 @@
 			</datalist>
 		</div>
 
-		<div class="form-group">
+		<div class={formGroupClass}>
 			<label for="typeName">Product type</label>
 			<input
 				id="typeName"
@@ -61,12 +64,12 @@
 			</datalist>
 		</div>
 
-		<div>
+		<div class={formGroupClass}>
 			<label for="expiryDate">Expiry date (optional)</label>
 			<input id="expiryDate" name="expiryDate" type="date" value={initialData.expiryDate ?? ''} />
 		</div>
 
-		<div>
+		<div class={formGroupClass}>
 			<label for="repurchaseStatus">Repurchase status</label>
 			<select id="repurchaseStatus" name="repurchaseStatus">
 				<option value="MAYBE" selected={initialData.repurchaseStatus === 'MAYBE'}>Maybe</option>
@@ -77,11 +80,11 @@
 			</select>
 		</div>
 
-		<div>
+		<div class={formGroupClass}>
 			<label for="notes">Notes (optional)</label>
 			<textarea id="notes" name="notes" rows="4">{initialData.notes ?? ''}</textarea>
 		</div>
 
-		<button type="submit">{submitLabel}</button>
+		<Button type="submit" label={submitLabel} variant="primary" />
 	</form>
 </div>

@@ -1,8 +1,5 @@
 @import 'tailwindcss';
 
-/* Components */
-@import '$lib/components/ProductForm/productform.css';
-
 @theme {
 	--font-display: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--color-primary: #a1eafb;

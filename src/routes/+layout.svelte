@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import type { Snippet } from 'svelte';
 	import Page from '$lib/components/Page/Page.svelte';
-	import '../app.css';
 
 	interface Props {
 		children: Snippet;

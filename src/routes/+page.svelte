@@ -7,8 +7,7 @@
 	let { data } = $props();
 </script>
 
-<!-- TODO: Convert to a table -->
-<div class="mb-36">
+<div class="mt-7 mb-36">
 	<div class="heading mb-10 flex items-center justify-center">
 		<Button
 			label="Add"

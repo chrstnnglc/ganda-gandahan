@@ -17,9 +17,7 @@
 </script>
 
 <header>
-	<div
-		class="storybook-header bg-secondary flex items-center justify-between border-transparent p-7"
-	>
+	<div class="bg-secondary flex items-center justify-between border-transparent p-7">
 		<div>
 			<a href="/"
 				><h1 class="align-center mx-3 inline-block text-2xl leading-none font-bold">

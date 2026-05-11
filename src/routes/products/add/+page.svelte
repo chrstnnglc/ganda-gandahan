@@ -5,6 +5,12 @@
 	export let data: PageData;
 </script>
 
-<h1>Add a product</h1>
+<div class="mt-7 mb-36">
+	<div class="flex flex-col items-center justify-center">
+		<h1 class="mx-0 my-2 text-2xl font-bold">Add a product</h1>
 
-<ProductForm brands={data.brands} productTypes={data.productTypes} />
+		<div class="w-1/2">
+			<ProductForm brands={data.brands} productTypes={data.productTypes} />
+		</div>
+	</div>
+</div>
