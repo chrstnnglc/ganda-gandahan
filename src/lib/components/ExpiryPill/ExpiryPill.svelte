@@ -23,10 +23,16 @@
 		expired: 'Expired',
 		soon: 'Expiring soon'
 	};
+
+	const bgColor = $derived(state === 'soon' ? '#fff3cd' : '#fde8e8');
+
+	const textColor = $derived(state === 'soon' ? '#856404' : '#a32d2d');
 </script>
 
 {#if state}
-	<span class="expiry-pill expiry-pill--{state}">
+	<span
+		class="border-radius-4 inline-block px-1 py-4 text-xs leading-2 font-semibold bg-[{bgColor}] text-[{textColor}]"
+	>
 		{labels[state]}
 	</span>
 {/if}
