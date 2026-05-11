@@ -18,10 +18,14 @@
 
 <header>
 	<div
-		class="storybook-header flex items-center justify-between border-transparent bg-[#ffcef3] p-5"
+		class="storybook-header bg-secondary flex items-center justify-between border-transparent p-7"
 	>
 		<div>
-			<a href="/"><h1>:D</h1></a>
+			<a href="/"
+				><h1 class="align-center mx-3 inline-block text-2xl leading-none font-bold">
+					ganda-gandahan cosmetics and skincare list
+				</h1></a
+			>
 		</div>
 	</div>
 </header>

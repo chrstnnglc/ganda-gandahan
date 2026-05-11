@@ -1,13 +1,16 @@
 @import 'tailwindcss';
 
 /* Components */
-@import '$lib/components/Button/button.css';
 @import '$lib/components/ExpiryPill/expirypill.css';
-@import '$lib/components/Header/header.css';
 @import '$lib/components/Page/page.css';
 @import '$lib/components/ProductForm/productform.css';
 @import '$lib/components/ProductTable/producttable.css';
 
-body {
-	font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@theme {
+	--font-display: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--color-primary: #a1eafb;
+	--color-secondary: #ffcef3;
+	--color-accent: #cabbe9;
+	--color-gandang-white: #fdfdfd;
+	--color-warning: #ff0000;
 }
