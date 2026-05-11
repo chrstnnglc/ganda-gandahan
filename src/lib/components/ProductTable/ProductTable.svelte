@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './producttable.css';
 	import Button from '$lib/components/Button/Button.svelte';
 	import type { ProductWithBrand } from '../../../routes/+page.server';
 	import { goto } from '$app/navigation';

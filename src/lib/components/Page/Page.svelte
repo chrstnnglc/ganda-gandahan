@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './page.css';
 	import Header from '../Header/Header.svelte';
 	import type { Snippet } from 'svelte';
 

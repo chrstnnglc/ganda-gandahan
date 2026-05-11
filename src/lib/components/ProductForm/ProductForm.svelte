@@ -1,5 +1,4 @@
 <script lang="ts">
-	import './productform.css';
 	import type { Brand, ProductType } from '@prisma/client';
 	import type { RepurchaseStatus } from '@prisma/client';
 

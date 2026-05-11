@@ -12,7 +12,7 @@
 <!-- TODO: Convert to a table -->
 <div>
 	<div class="heading mb-10 flex items-center justify-between">
-		<h2>{title}</h2>
+		<h2 class="">{title}</h2>
 		<Button
 			label="Add"
 			primary={true}

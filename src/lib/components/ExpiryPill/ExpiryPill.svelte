@@ -1,6 +1,4 @@
 <script lang="ts">
-	import './expirypill.css';
-
 	interface Props {
 		expiryDate: Date | null;
 	}
