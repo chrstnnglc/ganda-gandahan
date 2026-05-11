@@ -2,9 +2,7 @@
 
 /* Components */
 @import '$lib/components/ExpiryPill/expirypill.css';
-@import '$lib/components/Page/page.css';
 @import '$lib/components/ProductForm/productform.css';
-@import '$lib/components/ProductTable/producttable.css';
 
 @theme {
 	--font-display: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;

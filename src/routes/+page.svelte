@@ -5,14 +5,11 @@
 	import Button from '../lib/components/Button/Button.svelte';
 
 	let { data } = $props();
-
-	const title = 'My Skincare';
 </script>
 
 <!-- TODO: Convert to a table -->
-<div>
-	<div class="heading mb-10 flex items-center justify-between">
-		<h2 class="">{title}</h2>
+<div class="mb-36">
+	<div class="heading mb-10 flex items-center justify-center">
 		<Button
 			label="Add"
 			primary={true}
