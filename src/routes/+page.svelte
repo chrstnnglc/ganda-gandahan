@@ -1,5 +1,4 @@
 <script>
-	import './layout.css';
 	import { goto } from '$app/navigation';
 	import ProductTable from '$lib/components/ProductTable/ProductTable.svelte';
 	import Button from '../lib/components/Button/Button.svelte';
