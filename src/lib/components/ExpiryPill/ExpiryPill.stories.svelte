@@ -1,13 +1,22 @@
 <script module lang="ts">
-	import { Story } from '@storybook/addon-svelte-csf';
 	import { within, expect } from 'storybook/test';
 	import ExpiryPill from './ExpiryPill.svelte';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 
 	export const meta = {
 		title: 'Components/ExpiryPill',
 		component: ExpiryPill,
 		tags: ['autodocs']
 	};
+
+	const { Story } = defineMeta({
+		title: 'Components/ExpiryPill',
+		component: ExpiryPill,
+		tags: ['autodocs'],
+		argTypes: {
+			expiryDate: { control: 'date' }
+		}
+	});
 
 	const today = new Date();
 

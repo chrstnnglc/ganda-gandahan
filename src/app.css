@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 /* Components */
-@import '$lib/components/ExpiryPill/expirypill.css';
 @import '$lib/components/ProductForm/productform.css';
 
 @theme {

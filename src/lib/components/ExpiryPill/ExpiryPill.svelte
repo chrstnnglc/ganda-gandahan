@@ -24,14 +24,14 @@
 		soon: 'Expiring soon'
 	};
 
-	const bgColor = $derived(state === 'soon' ? '#fff3cd' : '#fde8e8');
+	const bgColor = $derived(state === 'soon' ? 'bg-[#fff3cd]' : 'bg-[#fde8e8]');
 
-	const textColor = $derived(state === 'soon' ? '#856404' : '#a32d2d');
+	const textColor = $derived(state === 'soon' ? 'text-[#856404]' : 'text-[#a32d2d]');
 </script>
 
 {#if state}
 	<span
-		class="border-radius-4 inline-block px-1 py-4 text-xs leading-2 font-semibold bg-[{bgColor}] text-[{textColor}]"
+		class={`border-radius-4 ${bgColor} ${textColor} inline-block rounded-2xl px-3 py-2 text-xs leading-2 font-semibold`}
 	>
 		{labels[state]}
 	</span>
