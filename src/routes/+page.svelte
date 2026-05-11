@@ -12,7 +12,7 @@
 	<div class="heading mb-10 flex items-center justify-center">
 		<Button
 			label="Add"
-			primary={true}
+			variant="primary"
 			onclick={() => {
 				goto('/products/add');
 			}}

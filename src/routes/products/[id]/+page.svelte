@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import Button from '$lib/components/Button/Button.svelte';
 	import ExpiryPill from '$lib/components/ExpiryPill/ExpiryPill.svelte';
 	import type { PageData } from './$types';
-	import './+page.css';
 
 	let { data }: { data: PageData } = $props();
 
@@ -22,55 +23,69 @@
 		STOP: 'Stop',
 		MAYBE: 'Maybe'
 	};
+
+	const trClass = 'border-accent border-b-1 border-solid';
+	const tdFieldClass = 'px-4 py-3 font-semibold text-[#333333]';
+	const tdValueClass = 'px-4 py-3 text-[#333333]';
 </script>
 
-<div class="product-detail">
-	<div class="product-header">
-		<div>
-			<h1>{product.brand.name} {product.name}</h1>
-			<p class="product-type">
+<div class="mx-36 mt-7 flex flex-col items-center justify-center">
+	<div class="mb-12 flex w-full items-center justify-between">
+		<div class="text-md mx-0 my-auto w-1/2">
+			<h1 class="mx-0 my-2 text-lg font-bold">{product.brand.name} {product.name}</h1>
+			<p class="text-sm text-[#999999]">
 				{product.type.name}
 				<ExpiryPill expiryDate={product.expiryDate} />
 			</p>
 		</div>
-		<a href="/products/{product.id}/edit" class="edit-link">Edit</a>
+		<Button
+			onclick={() => {
+				goto(`/products/${product.id}/edit`);
+			}}
+			label="Edit"
+			variant="secondary"
+		/>
 	</div>
 
-	<dl class="product-fields">
-		<div class="field">
-			<dt>Brand</dt>
-			<dd>{product.brand.name}</dd>
-		</div>
+	<div class="mb-8 flex items-center justify-center">
+		<table class="border-accent w-2xl border-t-1">
+			<tbody>
+				<tr class={trClass}>
+					<td class={tdFieldClass}>Brand</td>
+					<td class={tdValueClass}>{product.brand.name}</td>
+				</tr>
 
-		<div class="field">
-			<dt>Type</dt>
-			<dd>{product.type.name}</dd>
-		</div>
+				<tr class={trClass}>
+					<td class={tdFieldClass}>Type</td>
+					<td class={tdValueClass}>{product.type.name}</td>
+				</tr>
 
-		<div class="field">
-			<dt>Expiry date</dt>
-			<dd>{formatDate(product.expiryDate)}</dd>
-		</div>
+				<tr class={trClass}>
+					<td class={tdFieldClass}>Expiry date</td>
+					<td class={tdValueClass}>{formatDate(product.expiryDate)}</td>
+				</tr>
 
-		<div class="field">
-			<dt>Buy again?</dt>
-			<dd>
-				<span class="status status-{product.repurchaseStatus.toLowerCase()}">
-					{statusLabels[product.repurchaseStatus]}
-				</span>
-			</dd>
-		</div>
+				<tr class={trClass}>
+					<td class={tdFieldClass}>Buy again?</td>
+					<td class={tdValueClass}>
+						<span class="status status-{product.repurchaseStatus.toLowerCase()}">
+							{statusLabels[product.repurchaseStatus]}
+						</span>
+					</td>
+				</tr>
 
-		<div class="field">
-			<dt>Notes</dt>
-			<dd class="notes">{product.notes ?? '—'}</dd>
-		</div>
+				<tr class={trClass}>
+					<td class={tdFieldClass}>Notes</td>
+					<td class={tdValueClass}>{product.notes ?? '—'}</td>
+				</tr>
 
-		<div class="field">
-			<dt>Added on</dt>
-			<dd>{formatDate(product.createdAt)}</dd>
-		</div>
-	</dl>
+				<tr class={trClass}>
+					<td class={tdFieldClass}>Added on</td>
+					<td class={tdValueClass}>{formatDate(product.createdAt)}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
-	<a href="/" class="back-link">← Back to inventory</a>
+	<a href="/" class="hover:text-primary text-[#333333] hover:underline">← Back to inventory</a>
 </div>
