@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import type { Brand, ProductType } from '@prisma/client';
 	import type { RepurchaseStatus } from '@prisma/client';
 	import Button from '../Button/Button.svelte';
@@ -19,10 +20,23 @@
 	const formGroupClass = 'flex flex-col gap-1';
 	const labelClass = 'mb-1 font-medium';
 	const inputClass = 'border border-gray-300 rounded px-3 py-2';
+
+	let submitting = false;
 </script>
 
 <div class="w-max-[1000px]">
-	<form method="POST" action={actionPath} class="flex flex-col gap-5">
+	<form
+		method="POST"
+		action={actionPath}
+		class="flex flex-col gap-5"
+		use:enhance={() => {
+			submitting = true;
+			return async ({ update }) => {
+				await update();
+				submitting = false;
+			};
+		}}
+	>
 		<div class={formGroupClass}>
 			<label for="name" class={labelClass}> Product name </label>
 			<input
@@ -104,6 +118,11 @@
 			>
 		</div>
 
-		<Button type="submit" label={submitLabel} variant="primary" />
+		<Button
+			type="submit"
+			label={submitting ? 'Submitting...' : submitLabel}
+			variant="primary"
+			disabled={submitting}
+		/>
 	</form>
 </div>
