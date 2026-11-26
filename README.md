@@ -42,10 +42,10 @@ cp .env.example .env
 
 Fill in `.env`:
 
-| Variable             | Description                                                      |
-| -------------------- | ---------------------------------------------------------------- |
-| `TURSO_DATABASE_URL` | Turso database URL (`libsql://...`). Used when set.              |
-| `TURSO_AUTH_TOKEN`   | Turso auth token. Not needed for a local file.                   |
+| Variable             | Description                                                                         |
+| -------------------- | ----------------------------------------------------------------------------------- |
+| `TURSO_DATABASE_URL` | Turso database URL (`libsql://...`). Used when set.                                 |
+| `TURSO_AUTH_TOKEN`   | Turso auth token. Not needed for a local file.                                      |
 | `LOCAL_DATABASE_URL` | Local SQLite file (e.g. `file:local.db`), used when `TURSO_DATABASE_URL` is not set |
 
 Then apply the schema and start the dev server:

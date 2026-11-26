@@ -3,6 +3,7 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import ExpiryPill from '$lib/components/ExpiryPill/ExpiryPill.svelte';
 	import type { PageData } from './$types';
+	import { resolve } from '$app/paths';
 
 	let { data }: { data: PageData } = $props();
 
@@ -29,7 +30,6 @@
 	const tdValueClass = 'px-4 py-3 text-[#333333]';
 </script>
 
-/* eslint-disable svelte/no-navigation-without-resolve */
 <div class="mx-36 mt-7 flex flex-col items-center justify-center">
 	<div class="mb-12 flex w-full items-center justify-between">
 		<div class="text-md mx-0 my-auto w-1/2">
@@ -89,5 +89,7 @@
 		</table>
 	</div>
 
-	<a href="/" class="text-[#333333] hover:text-primary hover:underline">← Back to inventory</a>
+	<a href={resolve('/')} class="text-[#333333] hover:text-primary hover:underline"
+		>← Back to inventory</a
+	>
 </div>

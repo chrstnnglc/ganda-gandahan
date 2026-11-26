@@ -2,6 +2,7 @@
 	import Button from '$lib/components/Button/Button.svelte';
 	import ProductForm from '$lib/components/ProductForm/ProductForm.svelte';
 	import type { PageData } from './$types';
+	import { resolve } from '$app/paths';
 
 	let { data }: { data: PageData } = $props();
 
@@ -16,8 +17,9 @@
 <div class="mt-7 mb-36">
 	<div class="flex flex-col items-center justify-center">
 		<h1 class="mx-0 my-2 text-2xl font-semibold">Edit product</h1>
-		<a href="/products/{product.id}" class="text-[#333333] hover:text-primary hover:underline"
-			>Cancel</a
+		<a
+			href={resolve('/products/[id]', { id: product.id })}
+			class="text-[#333333] hover:text-primary hover:underline">Cancel</a
 		>
 
 		<div class="w-1/2">
