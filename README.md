@@ -1,4 +1,6 @@
-# 🧴 Skincare Inventory
+# 🧴 Ganda-gandahan (A Skincare Inventory app)
+
+_ganda-gandahan_: "acting or feeling pretty" in Tagalog
 
 A skincare inventory app built with SvelteKit to keep track of the products I own: what they are, when they expire, and whether I'd buy them again.
 
