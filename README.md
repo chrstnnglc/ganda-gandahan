@@ -89,7 +89,6 @@ npm run storybook
 │   │   │   ├── ProductForm/
 │   │   │   └── ProductTable/
 │   │   ├── assets/             # Favicon and other static assets
-│   │   ├── utils/              # Helpers and sample data for stories
 │   │   └── prisma.ts           # Prisma client (libSQL / Turso adapter)
 │   ├── stories/                # Storybook docs and assets
 │   ├── app.css                 # Global styles (Tailwind)
