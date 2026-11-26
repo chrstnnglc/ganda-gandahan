@@ -1,18 +1,14 @@
 <script lang="ts">
 	interface Props {
 		variant: 'primary' | 'secondary' | 'warning';
-		backgroundColor?: string;
-		size?: 'small' | 'medium' | 'large';
 		label: string;
 		type?: 'button' | 'submit' | 'reset';
 		onclick?: () => void;
-		disabled: boolean;
+		disabled?: boolean;
 	}
 
 	const {
 		variant = 'secondary',
-		backgroundColor,
-		size = 'medium',
 		label,
 		type = 'button',
 		disabled = false,
