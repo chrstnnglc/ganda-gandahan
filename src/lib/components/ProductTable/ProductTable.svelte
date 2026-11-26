@@ -18,6 +18,7 @@
 		<table class="w-full border-t-1 border-solid border-accent">
 			<tbody>
 				{#each products as product}
+					{#key product.id}
 					<tr
 						class="transition-bg-0.15s flex items-center justify-between border-b-1 border-solid border-accent px-3 py-5 hover:cursor-pointer hover:bg-accent"
 						onclick={() => goto(`/products/${product.id}`)}
